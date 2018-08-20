@@ -2060,18 +2060,18 @@ require([
         }
         ] */
 
-    //TUPDATE IMPORTANT!  Match labels with #groupResultsSelect indicies
+    //UPDATE IMPORTANT!  Match labels with #groupResultsSelect indicies
     function labelxSelect() {
       var dropdown = $("#groupResultsSelect")[0].selectedIndex;
       switch (dropdown) {
         case 0:
-          return "Catchment ID";
+          return "Sparrow Reach ID";
         case 1:
-          return "HUC12";
-        case 2:
           return "HUC8";
+        case 2:
+          return "Tributary";
         case 3:
-          return "River Basin";
+          return "Major Drainage Area";
         case 4:
           return "State";
       }
