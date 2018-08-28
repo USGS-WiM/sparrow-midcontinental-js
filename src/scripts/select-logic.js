@@ -430,9 +430,9 @@ function getExtraOutfields(outfieldsArr, sparrowLayerId){
         case 0: case 9: 
             //CATCHMENTS
             //finalChartArr.push("PNAME");
-            finalChartArr.push("AREASQKM");
-            finalChartArr.push("DIVDASQKM");
-            finalChartArr.push("COMID");             
+            finalChartArr.push("DEMIAREA");
+            finalChartArr.push("DEMTAREA");
+            finalChartArr.push("SPARROWID");             
             break;
         case 1: case 10:
             //HUC8 
@@ -452,9 +452,9 @@ function getExtraOutfields(outfieldsArr, sparrowLayerId){
             break;
         case 5: case 14:
             //Catchments w/ state divisions
-            finalChartArr.push("AREASQKM");
-            finalChartArr.push("AREASQKM");
-            finalChartArr.push("ST_COMID");
+            finalChartArr.push("STDEMIAREA");
+            finalChartArr.push("STDEMTAREA");
+            finalChartArr.push("ST_SPARRID");
             break;
         case 6: case 15:
             //grp3 w/ state divisions
@@ -524,6 +524,7 @@ function generateRenderer(){
         var query = new Query();
         var queryTask = new QueryTask(app.Url);
         query.where = app.layerDef;
+        query.maxAllowableOffset = 5000;
         queryTask.executeForCount(query, function(count){
             app.polygonResponseCount = count;
             if (app.polygonResponseCount > 2500 && $("#chartButton").prop('disabled', false)){
