@@ -524,7 +524,7 @@ function generateRenderer(){
         var query = new Query();
         var queryTask = new QueryTask(app.Url);
         query.where = app.layerDef;
-        query.maxAllowableOffset = 5000;
+        query.maxAllowableOffset = 750;
         queryTask.executeForCount(query, function(count){
             app.polygonResponseCount = count;
             if (app.polygonResponseCount > 2500 && $("#chartButton").prop('disabled', false)){
