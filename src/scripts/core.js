@@ -1131,10 +1131,9 @@ require([
                 });
                 if (app.userSelectedShapes.length == 0 && app.userSelectedShapes.length < chartFeatureMax) {
                     $("#chartButton").html("Show Chart");
-                } else{
+                } else {
                     $("#chartButton").html("Show Chart for selection");
                 }
-
             } else {
                 var calibrationInfoWindow = false;
                 app.map.graphics.clear();
@@ -1150,23 +1149,23 @@ require([
                             //UPDATE important! make sure the field names match what is in the REST layer
                             calibrationTemplate.setContent(
                                 "<div><b>Station Name:</b> " +
-                                    responseObj.feature.attributes.NAME +
+                                    responseObj.feature.attributes.STATION_NA +
                                     "</div><br>" +
                                     "<div><b>Station ID:</b> </b>" +
                                     responseObj.feature.attributes.STATION_ID +
                                     "</div><br>" +
                                     "<div><b>SPARROW Reach ID: </b>" +
-                                    responseObj.feature.attributes.COMID +
+                                    responseObj.feature.attributes.SPARROWID +
                                     "</div><br>" +
                                     "<div><b>Fluxmaster Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.FLUXMASTER +
+                                    responseObj.feature.attributes.ACTUAL +
                                     "</div><br>" +
                                     "<div><b>SPARROW Estimated Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.SPARROW_ES +
+                                    responseObj.feature.attributes.PLOAD_TOTA +
                                     "</div><br>"
                             );
 
@@ -1187,23 +1186,23 @@ require([
                             //UPDATE important! make sure the field names below match what is in the REST layer
                             calibrationTemplateN.setContent(
                                 "<div><b>Station Name:</b> " +
-                                    responseObj.feature.attributes.NAME +
+                                    responseObj.feature.attributes.STATION_NA +
                                     "</div><br>" +
                                     "<div><b>Station ID:</b> </b>" +
                                     responseObj.feature.attributes.STATION_ID +
                                     "</div><br>" +
                                     "<div><b>SPARROW Reach ID: </b>" +
-                                    responseObj.feature.attributes.COMID +
+                                    responseObj.feature.attributes.SPARROWID +
                                     "</div><br>" +
                                     "<div><b>Fluxmaster Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.FLUXMASTER +
+                                    responseObj.feature.attributes.ACTUAL +
                                     "</div><br>" +
                                     "<div><b>SPARROW Estimated Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.SPARROW_ES +
+                                    responseObj.feature.attributes.PLOAD_TOTA +
                                     "</div><br>"
                             );
 
@@ -1232,9 +1231,9 @@ require([
                         var attributes = response[0].feature.attributes;
                         var valuePairs = {};
 
-                        //need to wrap value in single quotes for ESRI REST Service query.  
+                        //need to wrap value in single quotes for ESRI REST Service query.
                         var chartQueryArg = response[0].displayFieldName + " = " + "'" + response[0].value + "'";
-                        
+
                         $.each(fields, function(index, obj) {
                             //console.log(obj.attribute);
                         });
@@ -1644,13 +1643,6 @@ require([
             //push the feature attributes AFTER removing all the "AREA" atributes.
             featureSort.push(feature.attributes);
         });
-        /* var singleChart = false;
-        var checkArr = ["ACCY", "INCY"];
-        $.each(checkArr, function(index, val){
-            if( featureSort[0].hasOwnProperty(val) ){
-                singleChart = true;
-            }
-        });*/
 
         var sum = 0;
         $.each(featureSort, function(index, obj) {
@@ -2195,7 +2187,6 @@ require([
                                     graphicsQuery.outFields = [fieldName];
                                     graphicsQuery.maxAllowableOffset = 1000;
                                     graphicsQuery.where = fieldName + "= '" + category + "'";
-                                    
 
                                     queryTask.execute(graphicsQuery, responseHandler);
 
@@ -2232,7 +2223,7 @@ require([
                                     }
 
                                     var queryString = queryField + " = " + "'" + thisCategory + "'";
-                                    
+
                                     app.map.graphics.clear();
                                     app.createChartQuery(queryString);
                                 }
@@ -2376,7 +2367,6 @@ require([
         graphicsQuery.outFields = [fieldName];
         graphicsQuery.maxAllowableOffset = 1000;
         graphicsQuery.where = fieldName + "= '" + category + "'";
-        
 
         queryTask.execute(graphicsQuery, responseHandler);
 
