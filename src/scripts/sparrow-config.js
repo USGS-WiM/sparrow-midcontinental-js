@@ -27,9 +27,9 @@ var dynamicBorderLayers = ["Catchment", "HUC12", "HUC8"]; //Aggregate layer choi
 var initQueryParams = ['ST', 'GP3', 'GP2', 'GP1' ]; //used to query for the AOI dropdown values on app init.
 
 //download locations
-/* var phosphorusShapefileURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_shapefiles_phosphorus.zip';
-var nitrogenShapefileURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_shapefiles_nitrogen.zip';
-var phosCalibrationURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_phosphorus_calibration_sites.zip';
+var phosphorusShapefileURL = 'https://sparrow.wim.usgs.gov/mid continental/downloads/mid-cont-shapefiles-phosphorus.zip';
+var nitrogenShapefileURL = 'https://sparrow.wim.usgs.gov/mid continental/downloads/mid-cont-shapefiles-nitrogen.zip';
+/*var phosCalibrationURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_phosphorus_calibration_sites.zip';
 var nitroCalibrationURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_nitrogen_calibration_sites.zip'; */
 
 var tableOutFields = [
