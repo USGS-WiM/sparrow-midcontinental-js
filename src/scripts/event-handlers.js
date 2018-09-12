@@ -221,7 +221,7 @@ function loadEventHandlers() {
         $("#grp1-select").selectpicker("refresh");
         $("#grp2-select").selectpicker("refresh");
         break;
-      case 1: //huc12
+      case 1: //huc8
         /***AOI Logic (Disable Tributary(GP2) & clear value if any) ***/
         //Tributary
         if (app.getLayerDefObj().AOI2) {
