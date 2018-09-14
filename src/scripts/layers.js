@@ -114,11 +114,11 @@ require([
                         includeLegend: false
                     }
                     },
-                    "Midcontinental Reaches  gt 1000": {
+                    "Reaches > 150cfs": {
                             url: serviceBaseURL,
-                            visibleLayers: [21],
+                            visibleLayers: [22],
                             options: {
-                                id: "gt 1000",
+                                id: "gt 150",
                                 visible: false
                             },
                             wimOptions: {
@@ -130,11 +130,11 @@ require([
                                 includeLegend: false
                             }
                             },
-                        "Midcontinental Reaches gt 150": {
+                        "Reaches > 1000cfs": {
                                     url: serviceBaseURL,
-                                    visibleLayers: [22],
+                                    visibleLayers: [21],
                                     options: {
-                                        id: "gt 150",
+                                        id: "gt 1000",
                                         visible: false
                                     },
                                     wimOptions: {
@@ -146,7 +146,7 @@ require([
                                         includeLegend: false
                                     }
                                 },
-                            "Midcontinental Reaches gt 5000": {
+                            "Reaches > 5000cfs": {
                                         url: serviceBaseURL,
                                         visibleLayers: [23],
                                         options: {
