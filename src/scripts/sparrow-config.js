@@ -1391,9 +1391,6 @@ var Group1_st_tn = [
 ]
 ////END NITROGEN LAYER GROUPS______________________________________________________________________________________________________________________________
 
-
- 
-=======
 /*
 Created By Erik Myers 8/16/2018
 CONFIG FILE FOR USE WITH SPARROW-Midcontinental

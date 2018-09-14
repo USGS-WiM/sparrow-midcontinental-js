@@ -113,6 +113,54 @@ require([
                         hasZoomto: false,
                         includeLegend: false
                     }
+                    },
+                    "Midcontinental Reaches  gt 1000": {
+                            url: serviceBaseURL,
+                            visibleLayers: [21],
+                            options: {
+                                id: "gt 1000",
+                                visible: false
+                            },
+                            wimOptions: {
+                                type: "layer",
+                                layerType: "agisDynamic",
+                                includeInLayerList: true,
+                                hasOpacitySlider: true,
+                                hasZoomto: false,
+                                includeLegend: false
+                            }
+                            },
+                        "Midcontinental Reaches gt 150": {
+                                    url: serviceBaseURL,
+                                    visibleLayers: [22],
+                                    options: {
+                                        id: "gt 150",
+                                        visible: false
+                                    },
+                                    wimOptions: {
+                                        type: "layer",
+                                        layerType: "agisDynamic",
+                                        includeInLayerList: true,
+                                        hasOpacitySlider: true,
+                                        hasZoomto: false,
+                                        includeLegend: false
+                                    }
+                                },
+                            "Midcontinental Reaches gt 5000": {
+                                        url: serviceBaseURL,
+                                        visibleLayers: [23],
+                                        options: {
+                                            id: "gt 5000",
+                                            visible: false
+                                        },
+                                        wimOptions: {
+                                            type: "layer",
+                                            layerType: "agisDynamic",
+                                            includeInLayerList: true,
+                                            hasOpacitySlider: true,
+                                            hasZoomto: false,
+                                            includeLegend: false
+                                        }
                 },
                 "Land Use 2002": {
                     url: "https://gis.wim.usgs.gov/arcgis/rest/services/SWTrends/lu2002_100515_test/ImageServer",
