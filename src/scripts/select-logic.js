@@ -224,9 +224,9 @@ function AOIChange(e) {
     var selectValue = e.currentTarget.value;
     var groupResultsIndex = $("#groupResultsSelect")[0].selectedIndex;
 
-    if ($("#groupResultsSelect")[0].value == "HUC12" || $("#groupResultsSelect")[0].value == "Catchment") {
-        //ENABLE huc12 dropdown
-        $("#grp3-select").removeClass("disabled"); //huc12
+    if ($("#groupResultsSelect")[0].value == "HUC8" || $("#groupResultsSelect")[0].value == "Catchments") {
+        //ENABLE huc8 dropdown
+        $("#grp3-select").removeClass("disabled"); //huc8
         $("#grp3-select").removeAttr("disabled");
     }
 
