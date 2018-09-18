@@ -1093,6 +1093,8 @@ require([
 
         app.identifyParams.geometry = evt.mapPoint;
         app.identifyParams.mapExtent = app.map.extent;
+        app.identifyParams.tolerance = 3;
+        app.identifyParams.maxAllowableOffset = 200;
 
         //Deferred callback
         var deferred = app.identifyTask.execute(app.identifyParams).addCallback(function(response) {
@@ -1149,13 +1151,13 @@ require([
                             //UPDATE important! make sure the field names match what is in the REST layer
                             calibrationTemplate.setContent(
                                 "<div><b>Station Name:</b> " +
-                                    responseObj.feature.attributes.STATION_NA +
+                                    responseObj.feature.attributes.Station_na +
                                     "</div><br>" +
                                     "<div><b>Station ID:</b> </b>" +
-                                    responseObj.feature.attributes.STATION_ID +
+                                    responseObj.feature.attributes.Station_id +
                                     "</div><br>" +
                                     "<div><b>SPARROW Reach ID: </b>" +
-                                    responseObj.feature.attributes.SPARROWID +
+                                    responseObj.feature.attributes.Sparrowid +
                                     "</div><br>" +
                                     "<div><b>Fluxmaster Load " +
                                     chartUnits +
@@ -1186,13 +1188,13 @@ require([
                             //UPDATE important! make sure the field names below match what is in the REST layer
                             calibrationTemplateN.setContent(
                                 "<div><b>Station Name:</b> " +
-                                    responseObj.feature.attributes.STATION_NA +
+                                    responseObj.feature.attributes.Station_na +
                                     "</div><br>" +
                                     "<div><b>Station ID:</b> </b>" +
-                                    responseObj.feature.attributes.STATION_ID +
+                                    responseObj.feature.attributes.Station_id +
                                     "</div><br>" +
                                     "<div><b>SPARROW Reach ID: </b>" +
-                                    responseObj.feature.attributes.SPARROWID +
+                                    responseObj.feature.attributes.Sparrowid +
                                     "</div><br>" +
                                     "<div><b>Fluxmaster Load " +
                                     chartUnits +
