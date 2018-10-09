@@ -9,8 +9,7 @@ ALSO uses SPARROWID and ST_SPARRID in place of COMID, ST_COMID
 var appTitle = "Midcontinental Nutrient Loading";
 var appVersion = "v0.9.0";
 
-var serviceBaseURL =
-    "https://sparrowprod.wim.usgs.gov/arcgis/rest/services/Sparrow_Mid_Continental/Updated_Sparrow_mid_con/MapServer/"; //important! UPDATE rest service URL
+var serviceBaseURL = "https://sparrowtest.wim.usgs.gov/arcgis/rest/services/sparrowMidcontinental/SparrowMidcontinental/MapServer/"; //important! UPDATE rest service URL
 var chartUnits = " (kg/yr.)";
 var chartFeatureMax = 2500; //chart will not be available if more than this many polygons are showing on map.
 
