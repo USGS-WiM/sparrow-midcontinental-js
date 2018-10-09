@@ -124,7 +124,7 @@ function loadEventHandlers() {
 
   /* CLEAR AOI BUTTON EVENT */
   $("#clearAOIButton").on("click", function() {
-    //if resetting to Catchment layer, disable HUC12 Dropdown
+    //if resetting to Catchment layer, disable HUC8 Dropdown
     if ($("#groupResultsSelect")[0].value == "Catchment") {
       $("#grp3-select").attr("disabled", "disabled");
       $("#grp3-select").addClass("disabled");
@@ -203,16 +203,16 @@ function loadEventHandlers() {
     $("#grp1-select").removeClass("disabled"); //River Basin
     $("#grp1-select").removeAttr("disabled");
     $(".grp1-warning").remove();
-    $("#grp2-select").removeClass("disabled"); //huc8
+    $("#grp2-select").removeClass("disabled"); //trib
     $("#grp2-select").removeAttr("disabled");
     $(".grp2-warning").remove();
-    $("#grp3-select").removeClass("disabled"); //huc12
+    $("#grp3-select").removeClass("disabled"); //huc8
     $("#grp3-select").removeAttr("disabled");
     $(".grp3-warning").remove();
 
     switch ($("#groupResultsSelect")[0].selectedIndex) {
       case 0: //Catchment
-        //DISABLE HUC12 @ full extent because it has too many options
+        //DISABLE HUC8 @ full extent because it has too many options
         $("#grp3-select").attr("disabled", "disabled");
         $("#grp3-select").addClass("disabled");
         $("#grp3-select").selectpicker("refresh");
@@ -228,13 +228,13 @@ function loadEventHandlers() {
           clearAOIandAppendWarning(
             "grp2-warning",
             "HUC8",
-            "HUC12",
+            "HUC8",
             "#grp2-select",
             "AOI2"
           );
         }
-        //DISABLE HUC12 @ full extent because it has too many options
-        $("#grp3-select").attr("disabled", "disabled");
+        //DISABLE HUC8 @ full extent because it has too many options
+         $("#grp3-select").attr("disabled", "disabled");
         $("#grp3-select").addClass("disabled");
         $("#grp3-select").selectpicker("refresh");
 
@@ -242,13 +242,13 @@ function loadEventHandlers() {
         $("#grp1-select").selectpicker("refresh");
         $("#grp2-select").selectpicker("refresh");
         break;
-      case 2: //huc8
+      case 2: //Tributary
         /***AOI logic (disable HUC8(GP3) & clear value if any) ***/
         //huc8
         if (app.getLayerDefObj().AOI3) {
           clearAOIandAppendWarning(
             "grp3-warning",
-            "HUC12",
+            "HUC8",
             "HUC8",
             "#grp3-select",
             "AOI3"
@@ -285,7 +285,7 @@ function loadEventHandlers() {
         if (app.getLayerDefObj().AOI3) {
           clearAOIandAppendWarning(
             "grp3-warning",
-            "HUC12",
+            "HUC8",
             "River Basin",
             "#grp3-select",
             "AOI3"
@@ -328,7 +328,7 @@ function loadEventHandlers() {
         if (app.getLayerDefObj().AOI3) {
           clearAOIandAppendWarning(
             "grp3-warning",
-            "HUC12",
+            "HUC8",
             "State",
             "#grp3-select",
             "AOI3"

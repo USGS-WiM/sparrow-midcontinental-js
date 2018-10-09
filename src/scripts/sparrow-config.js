@@ -23,7 +23,7 @@ var mapCenter = [-89.0, 44.0];
 defaultZoomLevel = 5;
 
 borderThreshold = 10; //dynamic polygon border threshold.  When zoomed beyond this number borders appear
-var dynamicBorderLayers = ["Catchment", "HUC12", "HUC8"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
+var dynamicBorderLayers = ["Catchment", "HUC8/Sub-sub drainage area", "Tributary"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
 
 var initQueryParams = ["ST", "GP3", "GP2", "GP1"]; //used to query for the AOI dropdown values on app init.
 
@@ -37,13 +37,10 @@ var groupResultsLabels = {
 };
 
 //download locations
-var phosphorusShapefileURL =
-    "https://sparrow.wim.usgs.gov/mid-continental/downloads/mid-cont-shapefiles-phosphorus.zip";
+var phosphorusShapefileURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/mid-cont-shapefiles-phosphorus.zip";
 var nitrogenShapefileURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/mid-cont-shapefiles-nitrogen.zip";
-var phosCalibrationURL =
-    "https://sparrow.wim.usgs.gov/mid-continental/downloads/mid-cont-phosphorus-calibration-sites.zip";
-var nitroCalibrationURL =
-    "https://sparrow.wim.usgs.gov/mid-continental/downloads/mid-cont-nitrogen-calibration-sites.zip";
+var phosCalibrationURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/mid-cont-phosphorus-calibration-sites.zip";
+var nitroCalibrationURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/mid-cont-nitrogen-calibration-sites.zip";
 
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id" },
@@ -141,7 +138,7 @@ var nitrogenSourceDefinitions = {
     1. each color corresponds with the order of SourceDefinitions objects above  
     2. there the number of hex colors matches the number of nutrient sources
 **/
-var phosColors = ["#BF0000", "#FFCCFF", "#663100", "#FFEC99", "#EAA720", "#0070C0","#00a900"];
+var phosColors = ["#BF0000", "#FFCCFF", "#663100", "#FFEC99", "#EAA720", "#0070C0", "#00a900"];
 var nitroColors = ["#BF0000", "#FFCCFF", "#663100", "#FFEC99", "#A2EB85", "#00a900", "#006800", "#0070C0"];
 
 /***-----BEGIN PHOSPHORUS LAYER GROUPS --------***/
