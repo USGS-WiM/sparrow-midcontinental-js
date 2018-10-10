@@ -15,7 +15,7 @@ var chartFeatureMax = 2500; //chart will not be available if more than this many
 
 var groupResultsInitIndex = 1; //sets the default layer for the application.  In this case service layer 1 == HUC8.
 
-var splitLayers = [5, 6, 7, 13, 14, 15]; //important! UPDATE layer Ids of all state split layers
+var splitLayers = [5, 6, 7, 8, 14, 15, 16, 17]; //important! UPDATE layer Ids of all state split layers (st_cats, sg3, sg2, sg1)
 
 var mapCenter = [-89.0, 44.0];
 //app.defaultMapCenter = [-87, 42];
