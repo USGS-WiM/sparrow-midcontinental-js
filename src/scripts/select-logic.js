@@ -86,7 +86,17 @@ function populateMetricOptions(selectedIndex) {
                 }
                 break;
             case 4:
-                metricOptions = ST_tn;
+                if ($("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group1_st_tn;
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0) {
+                    metricOptions = Group2_st_tn;
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0) {
+                        metricOptions = Group3_st_tn;
+                } else {
+                    metricOptions = ST_tn;
+                }
                 break;
         }
     }
@@ -203,11 +213,14 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 break;
             case 4:
                 if ($("#grp1-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 8; //grp1 w/state splits
+                    layerArrayValue = 8; //sg1
                 }
                 //IMPORTANT TODO NOTE: this may not be required
                 else if ($("#grp2-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 7; //grp1 w/state splits
+                    layerArrayValue = 7; //sg2
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 6; //sg3
                 } else {
                     layerArrayValue = 4;
                 }
@@ -246,7 +259,18 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 }
                 break;
             case 4:
-                layerArrayValue = 13;
+                if ($("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 17; //sg1_tn
+                }
+                //IMPORTANT TODO NOTE: this may not be required
+                else if ($("#grp2-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 16; //sg2_tn
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 15; //sg3_tn
+                } else {
+                    layerArrayValue = 13;
+                }
                 break;
         }
     }
