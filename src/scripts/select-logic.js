@@ -145,6 +145,28 @@ function returnDefaultLayer(sparrowId) {
     }
 }
 
+//used when clearing AOI to revert any selections back to the full state laeyer
+function returnToStateLayer(sparrowId){
+    switch(sparrowId){
+        case 8:
+            return 4;
+        case 7:
+            return 4;
+        case 6:
+            return 4;
+        case 5:
+            return 4;
+        case 17:
+            return 13;
+        case 16:
+            return 13;
+        case 15: 
+            return 13;
+        case 14:
+            return 13;
+    }
+}
+
 //uses the #groupResultsSelect selected value and Selected radio to define the SparrowRanking display layer.
 function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
     if (selectedRadio == "radio1") {

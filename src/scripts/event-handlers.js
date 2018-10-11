@@ -127,13 +127,7 @@ function loadEventHandlers() {
         if ($.inArray(sparrowId, splitLayers) > -1) {
             //quick fix to reset state layer correctly if SG1 and GRB:State were selected
             if ($("#groupResultsSelect")[0].selectedIndex == 4){
-                if (sparrowId == 8){
-                    sparrowId = 4; //reset from SG1 to ST (phos)
-                    populateMetricOptions(sparrowId);
-                }
-                if (sparrowId == 17){
-                    sparrowId = 13;  //reset from SG1 to ST (nitro)
-                }
+                sparrowId = returnToStateLayer(sparrowId);
             } else{
                 sparrowId = returnDefaultLayer(sparrowId, $(".radio input[type='radio']:checked")[0].id);
             }
@@ -148,11 +142,9 @@ function loadEventHandlers() {
 
         //reset the selects
         $(".aoiSelect").selectpicker("val", ""); // 'hack' because selectpicker('deselectAll') method only works when bootstrap-select is open.
-
-        generateRenderer();
-
-        populateMetricOptions($("#groupResultsSelect")[0].selectedIndex);
-        //redraw the symbols
+        
+        populateMetricOptions($("#groupResultsSelect")[0].selectedIndex); //populate correct metric options
+        generateRenderer(); //redraw the symbols
 
         //return to Default AOI options for ALL AOI selects
         app.clearLayerDefObj();
