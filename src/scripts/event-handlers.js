@@ -195,12 +195,35 @@ function loadEventHandlers() {
         $("#grp3-select").removeAttr("disabled");
         $(".grp3-warning").remove();
 
+        //call to check if user has selected a value in the AOI
+        var AOIhasValue = function() {
+            if ($("#grp1-select")[0].value !== ""){
+                return true;
+            }
+            else if ($("#grp2-select")[0].value !== "" ){
+                return true;
+            }
+            else if ($("#grp3-select")[0].value !== "" ){
+                return true;
+            }
+            else if ($("#st-select")[0].value !== "" ){
+                return true
+            }
+            else{
+                return false;
+            }
+        }
+
         switch ($("#groupResultsSelect")[0].selectedIndex) {
             case 0: //Catchment
                 //DISABLE HUC8 @ full extent because it has too many options
-                $("#grp3-select").attr("disabled", "disabled");
-                $("#grp3-select").addClass("disabled");
-                $("#grp3-select").selectpicker("refresh");
+                if( AOIhasValue() === false ){
+                    $("#grp3-select").attr("disabled", "disabled");
+                    $("#grp3-select").addClass("disabled");
+                    $("#grp3-select").selectpicker("refresh");
+                } else{
+                    $("#grp3-select").selectpicker("refresh");
+                } 
 
                 //AOI HUC8(GP3) AND Main River basin(GP1) enabled
                 $("#grp1-select").selectpicker("refresh");
@@ -209,13 +232,17 @@ function loadEventHandlers() {
             case 1: //huc8
                 /***AOI Logic (Disable Tributary(GP2) & clear value if any) ***/
                 //Tributary
-                if (app.getLayerDefObj().AOI2) {
+                /* if (app.getLayerDefObj().AOI2) {
                     clearAOIandAppendWarning("grp2-warning", "HUC8", "HUC8", "#grp2-select", "AOI2");
-                }
+                } */
                 //DISABLE HUC8 @ full extent because it has too many options
-                $("#grp3-select").attr("disabled", "disabled");
-                $("#grp3-select").addClass("disabled");
-                $("#grp3-select").selectpicker("refresh");
+                if( AOIhasValue() === false ){
+                    $("#grp3-select").attr("disabled", "disabled");
+                    $("#grp3-select").addClass("disabled");
+                    $("#grp3-select").selectpicker("refresh");
+                } else{
+                    $("#grp3-select").selectpicker("refresh");
+                } 
 
                 //AOI HUC8(GP3) AND Main River basin(GP1) enabled
                 $("#grp1-select").selectpicker("refresh");
