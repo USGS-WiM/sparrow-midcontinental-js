@@ -1,5 +1,5 @@
 /*
-_________________Created by emyers 10/2016_____________ reset
+_________________Created by emyers 10/2016_____________
 */
 
 $(".selectpicker").selectpicker();
@@ -45,7 +45,14 @@ function populateMetricOptions(selectedIndex) {
                 break;
 
             case 4:
-                metricOptions = ST;
+                if ($("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group1_st;
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0) {
+                    metricOptions = Group2_st;
+                } else {
+                    metricOptions = ST;
+                }
                 break;
         }
     } else if ($(".radio input[type='radio']:checked")[0].id == "radio2") {
@@ -79,7 +86,17 @@ function populateMetricOptions(selectedIndex) {
                 }
                 break;
             case 4:
-                metricOptions = ST_tn;
+                if ($("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group1_st_tn;
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0) {
+                    metricOptions = Group2_st_tn;
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0) {
+                        metricOptions = Group3_st_tn;
+                } else {
+                    metricOptions = ST_tn;
+                }
                 break;
         }
     }
@@ -138,6 +155,28 @@ function returnDefaultLayer(sparrowId) {
     }
 }
 
+//used when clearing AOI to revert any selections back to the full state laeyer
+function returnToStateLayer(sparrowId){
+    switch(sparrowId){
+        case 8:
+            return 4;
+        case 7:
+            return 4;
+        case 6:
+            return 4;
+        case 5:
+            return 4;
+        case 17:
+            return 13;
+        case 16:
+            return 13;
+        case 15: 
+            return 13;
+        case 14:
+            return 13;
+    }
+}
+
 //uses the #groupResultsSelect selected value and Selected radio to define the SparrowRanking display layer.
 function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
     if (selectedRadio == "radio1") {
@@ -152,7 +191,7 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 break;
             case 1:
                 if ($("#st-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 6; //grp3 w/ state splits HUC8 
+                    layerArrayValue = 6; //grp3 w/ state splits
                 } else {
                     layerArrayValue = 1;
                 }
@@ -160,20 +199,31 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 break;
             case 2:
                 if ($("#st-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 7; //grp2 w/state splits Tributaries 
+                    layerArrayValue = 7; //grp2 w/state splits
                 } else {
                     layerArrayValue = 2;
                 }
                 break;
             case 3:
                 if ($("#st-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 8; //grp1 w/state splits SG1 Major Drainage Area 
+                    layerArrayValue = 8; //grp1 w/state splits
                 } else {
                     layerArrayValue = 3;
                 }
                 break;
             case 4:
-                layerArrayValue = 4;
+                if ($("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 8; //sg1
+                }
+                //IMPORTANT TODO NOTE: this may not be required
+                else if ($("#grp2-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 7; //sg2
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 6; //sg3
+                } else {
+                    layerArrayValue = 4;
+                }
                 break;
         }
     } else if (selectedRadio == "radio2") {
@@ -209,7 +259,18 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 }
                 break;
             case 4:
-                layerArrayValue = 13;
+                if ($("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 17; //sg1_tn
+                }
+                //IMPORTANT TODO NOTE: this may not be required
+                else if ($("#grp2-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 16; //sg2_tn
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 15; //sg3_tn
+                } else {
+                    layerArrayValue = 13;
+                }
                 break;
         }
     }
@@ -224,9 +285,9 @@ function AOIChange(e) {
     var selectValue = e.currentTarget.value;
     var groupResultsIndex = $("#groupResultsSelect")[0].selectedIndex;
 
-    if ($("#groupResultsSelect")[0].value == "HUC8" || $("#groupResultsSelect")[0].value == "Catchments") {
+    if ($("#groupResultsSelect")[0].selectedIndex == 1 || $("#groupResultsSelect")[0].selectedIndex == 0) {
         //ENABLE huc8 dropdown
-        $("#grp3-select").removeClass("disabled", false); //huc8
+        $("#grp3-select").removeClass("disabled"); //huc8
         $("#grp3-select").removeAttr("disabled");
     }
 
@@ -235,13 +296,15 @@ function AOIChange(e) {
         selectedValue: selectValue
     };
 
-    if (selectId == "st-select" && groupResultsIndex != 4) {
+    //TODO ? if groupResultsIndex == 4 set aggregate group
+
+    //if (selectId == "st-select" && groupResultsIndex != 4) {
         //if not already on a state split layer, set one now.
         //TODO: figure out how you can access the current layers to see if you're on a split layer.
         //if(app.map.getLayer('SparrowRanking').visibleLayers[0]){
         populateMetricOptions($("#groupResultsSelect")[0].selectedIndex);
         setAggregateGroup(groupResultsIndex, $(".radio input[type='radio']:checked")[0].id);
-    }
+    //}
 
     //only update if there's a value to update to (clearing selected values depending on Group Results by selections)
     if (newObj.selectedValue != "") {
