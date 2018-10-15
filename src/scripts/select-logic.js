@@ -45,11 +45,23 @@ function populateMetricOptions(selectedIndex) {
                 break;
 
             case 4:
-                if ($("#grp1-select")[0].selectedIndex > 0) {
-                    metricOptions = Group1_st;
+                if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group3_st;
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group3_st;
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group2_st;
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0) {
+                    metricOptions = Group3_st;
                 }
                 else if ($("#grp2-select")[0].selectedIndex > 0) {
                     metricOptions = Group2_st;
+                }
+                else if ($("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group1_st;
                 } else {
                     metricOptions = ST;
                 }
@@ -86,14 +98,23 @@ function populateMetricOptions(selectedIndex) {
                 }
                 break;
             case 4:
-                if ($("#grp1-select")[0].selectedIndex > 0) {
-                    metricOptions = Group1_st_tn;
+                if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group3_st_tn;
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group3_st_tn;
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group2_st_tn;
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0) {
+                    metricOptions = Group3_st_tn;
                 }
                 else if ($("#grp2-select")[0].selectedIndex > 0) {
                     metricOptions = Group2_st_tn;
                 }
-                else if ($("#grp3-select")[0].selectedIndex > 0) {
-                        metricOptions = Group3_st_tn;
+                else if ($("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group1_st_tn;
                 } else {
                     metricOptions = ST_tn;
                 }
@@ -191,7 +212,7 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 break;
             case 1:
                 if ($("#st-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 6; //grp3 w/ state splits
+                    layerArrayValue = 6; //sg3
                 } else {
                     layerArrayValue = 1;
                 }
@@ -199,30 +220,38 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 break;
             case 2:
                 if ($("#st-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 7; //grp2 w/state splits
+                    layerArrayValue = 7; //sg2
                 } else {
                     layerArrayValue = 2;
                 }
                 break;
             case 3:
                 if ($("#st-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 8; //grp1 w/state splits
+                    layerArrayValue = 8; //sg1
                 } else {
                     layerArrayValue = 3;
                 }
                 break;
             case 4:
-                if ($("#grp1-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 8; //sg1
+                if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 6; //sg3
                 }
-                //IMPORTANT TODO NOTE: this may not be required
+                else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 6; //sg3
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 7; //sg2
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 6; //sg3
+                }
                 else if ($("#grp2-select")[0].selectedIndex > 0) {
                     layerArrayValue = 7; //sg2
                 }
-                else if ($("#grp2-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 6; //sg3
+                else if ($("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 8; //sg1
                 } else {
-                    layerArrayValue = 4;
+                    layerArrayValue = 4; //ST
                 }
                 break;
         }
@@ -259,17 +288,19 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 }
                 break;
             case 4:
-                if ($("#grp1-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 17; //sg1_tn
+                if ($("#grp3-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 15; //sg3
                 }
-                //IMPORTANT TODO NOTE: this may not be required
+                if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 16; //sg2
+                }
                 else if ($("#grp2-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 16; //sg2_tn
+                    layerArrayValue = 16; //sg2
                 }
-                else if ($("#grp3-select")[0].selectedIndex > 0) {
-                    layerArrayValue = 15; //sg3_tn
+                else if ($("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 17; //sg1
                 } else {
-                    layerArrayValue = 13;
+                    layerArrayValue = 13; //ST
                 }
                 break;
         }
