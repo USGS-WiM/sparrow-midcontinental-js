@@ -1,5 +1,5 @@
 /*
-_________________Created by emyers 10/2016_____________
+_________________Created by emyers 10/2016_____________ reset
 */
 
 $(".selectpicker").selectpicker();
