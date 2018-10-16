@@ -304,8 +304,8 @@ function loadEventHandlers() {
                 if (app.getLayerDefObj().AOI3) {
                     clearAOIandAppendWarning("grp3-warning", "HUC8", "State", "#grp3-select", "AOI3");
                 }
-                $("#grp3-select").attr("disabled", "disabled"); //huc8
-                $("#grp3-select").addClass("disabled");
+                //$("#grp3-select").attr("disabled", "disabled"); //huc8
+                //$("#grp3-select").addClass("disabled");
                 $("#grp3-select").selectpicker("refresh");
                 break;
         } //end switch

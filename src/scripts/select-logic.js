@@ -51,6 +51,9 @@ function populateMetricOptions(selectedIndex) {
                 else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
                     metricOptions = Group3_st;
                 }
+                else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp2-select")[0].selectedIndex > 0) {
+                    metricOptions = Group3_st;
+                }
                 else if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
                     metricOptions = Group2_st;
                 }
@@ -102,6 +105,9 @@ function populateMetricOptions(selectedIndex) {
                     metricOptions = Group3_st_tn;
                 }
                 else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    metricOptions = Group3_st_tn;
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp2-select")[0].selectedIndex > 0) {
                     metricOptions = Group3_st_tn;
                 }
                 else if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
@@ -239,6 +245,9 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
                     layerArrayValue = 6; //sg3
                 }
+                else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp2-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 6; //sg3
+                }
                 else if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
                     layerArrayValue = 7; //sg2
                 }
@@ -288,11 +297,20 @@ function setAggregateGroup(groupBySelectedIndex, selectedRadio) {
                 }
                 break;
             case 4:
-                if ($("#grp3-select")[0].selectedIndex > 0) {
+                if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
                     layerArrayValue = 15; //sg3
                 }
-                if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 15; //sg3
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0 && $("#grp2-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 15; //sg3
+                }
+                else if ($("#grp2-select")[0].selectedIndex > 0 && $("#grp1-select")[0].selectedIndex > 0) {
                     layerArrayValue = 16; //sg2
+                }
+                else if ($("#grp3-select")[0].selectedIndex > 0) {
+                    layerArrayValue = 15; //sg3
                 }
                 else if ($("#grp2-select")[0].selectedIndex > 0) {
                     layerArrayValue = 16; //sg2
