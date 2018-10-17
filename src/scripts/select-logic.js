@@ -334,10 +334,35 @@ function AOIChange(e) {
     var selectValue = e.currentTarget.value;
     var groupResultsIndex = $("#groupResultsSelect")[0].selectedIndex;
 
+    //call to check if user has selected a value in the AOI
+    var AOIhasValue = function() {
+        if ($("#grp1-select")[0].value !== ""){
+            return true;
+        }
+        //if GRP2 is selected return false and keep GRP3 disabled
+        /* else if ($("#grp2-select")[0].value !== "" ){
+            return true;
+        } */
+        else if ($("#grp3-select")[0].value !== "" ){
+            return true;
+        }
+        else if ($("#st-select")[0].value !== "" ){
+            return true
+        }
+        else{
+            return false;
+        }
+    }
+
     if ($("#groupResultsSelect")[0].selectedIndex == 1 || $("#groupResultsSelect")[0].selectedIndex == 0) {
         //ENABLE huc8 dropdown
         $("#grp3-select").removeClass("disabled"); //huc8
         $("#grp3-select").removeAttr("disabled");
+    } else if ($("#groupResultsSelect")[0].selectedIndex == 4){
+        if( AOIhasValue() === true ){
+            $("#grp3-select").removeClass("disabled"); //huc8
+            $("#grp3-select").removeAttr("disabled");
+        }
     }
 
     var newObj = {
