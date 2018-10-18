@@ -114,12 +114,11 @@ function loadEventHandlers() {
 
     /* CLEAR AOI BUTTON EVENT */
     $("#clearAOIButton").on("click", function() {
-        //if resetting to Catchment layer, disable HUC8 Dropdown
-        if ($("#groupResultsSelect")[0].value == "Catchment") {
-            $("#grp3-select").attr("disabled", "disabled");
-            $("#grp3-select").addClass("disabled");
-            $("#grp3-select").selectpicker("refresh");
-        }
+        //if resetting to default, make sure GRP3 is disabled
+        $("#grp3-select").attr("disabled", "disabled");
+        $("#grp3-select").addClass("disabled");
+        $("#grp3-select").selectpicker("refresh");
+        
         $("#page-loader").show();
         var sparrowId = app.map.getLayer("SparrowRanking").visibleLayers[0];
 
@@ -232,9 +231,9 @@ function loadEventHandlers() {
             case 1: //huc8
                 /***AOI Logic (Disable Tributary(GP2) & clear value if any) ***/
                 //Tributary
-                /* if (app.getLayerDefObj().AOI2) {
+                if (app.getLayerDefObj().AOI2) {
                     clearAOIandAppendWarning("grp2-warning", "HUC8", "HUC8", "#grp2-select", "AOI2");
-                } */
+                } 
                 //DISABLE HUC8 @ full extent because it has too many options
                 if( AOIhasValue() === false ){
                     $("#grp3-select").attr("disabled", "disabled");
@@ -243,10 +242,13 @@ function loadEventHandlers() {
                 } else{
                     $("#grp3-select").selectpicker("refresh");
                 } 
-
+                //disable tributary (GP2 is not in the GP3 attributes)
+                $("#grp2-select").attr("disabled", "disabled");
+                $("#grp2-select").addClass("disabled");
+                
                 //AOI HUC8(GP3) AND Main River basin(GP1) enabled
-                $("#grp1-select").selectpicker("refresh");
                 $("#grp2-select").selectpicker("refresh");
+                $("#grp1-select").selectpicker("refresh");
                 break;
             case 2: //Tributary
                 /***AOI logic (disable HUC8(GP3) & clear value if any) ***/
