@@ -632,9 +632,7 @@ table.hover-highlight tbody > tr.even:hover > td {
 #toggle{
     padding: 25px 0 !important;
 }
-.panel-body{
 
-}
 .panel-body .btn{
     display: block;
     width: 100%;
