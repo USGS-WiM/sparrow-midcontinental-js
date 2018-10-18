@@ -247,13 +247,13 @@ require([
             var disForHUC = document.getElementById("groupResultsSelect").getElementsByTagName("option");
             disForHUC[2].disabled = true; // trib
             disForHUC[3].disabled = true; // main river basin
-            disForHUC[4].disabled = true; // state
+            // disForHUC[4].disabled = true; // state
             $("#groupResultsSelect").selectpicker("render");
         }
         if (layerDefObj.AOI2) {
             // if Trib has value NO: [1] HUC8, [3] Main River Basin, [4] State Group By
             var disForTrib = document.getElementById("groupResultsSelect").getElementsByTagName("option");
-            //disForTrib[1].disabled = true; // trib
+            disForTrib[1].disabled = true; // trib
             disForTrib[3].disabled = true; // main river basin
             //disForTrib[4].disabled = true; // state
             $("#groupResultsSelect").selectpicker("render");
