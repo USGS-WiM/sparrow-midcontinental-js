@@ -6,7 +6,7 @@ THIS CONFIG REMOVES CATCHMENT AND AGGREGATE LABELS FROM THE CHARTOUTFIELS OBJECT
 ALSO uses SPARROWID and ST_SPARRID in place of COMID, ST_COMID
 */
 
-var appTitle = "Midcontinental Nutrient Loading";
+var appTitle = "2002 Midcontinental Nutrient Loading";
 var appVersion = "v0.9.0";
 
 var serviceBaseURL = "https://sparrowtest.wim.usgs.gov/arcgis/rest/services/sparrowMidcontinental/SparrowMidcontinental/MapServer/"; //important! UPDATE rest service URL
