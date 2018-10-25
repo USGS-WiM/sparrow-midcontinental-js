@@ -769,6 +769,7 @@ var Group1_st = [
             { attribute: "SG1_AY_S3", label: mappedDefinitions.ay + " " + phosphorusSourceDefinitions.s3 },
             { attribute: "SG1_AY_S4", label: mappedDefinitions.ay + " " + phosphorusSourceDefinitions.s4 },
             { attribute: "SG1_AY_S5", label: mappedDefinitions.ay + " " + phosphorusSourceDefinitions.s5 },
+            { attribute: "SG1_AY_S6", label: mappedDefinitions.ay + " " + phosphorusSourceDefinitions.s6 },
             { attribute: "SG1_AY_S7", label: mappedDefinitions.ay + " " + phosphorusSourceDefinitions.s7 }
         ]
     },
