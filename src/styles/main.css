@@ -1075,6 +1075,10 @@ Mitch GH Issues Aug 28
     padding:5px;
 }
 
+.lyrTogDiv #SparrowRanking{
+    cursor: not-allowed !important;
+}
+
 
 
 
