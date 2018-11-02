@@ -1128,6 +1128,10 @@ Mitch GH Issues Aug 28
     margin: 0 auto;
 }
 
+.aoiSelect{
+    padding:5px;
+}
+
 #wim_logo{
     width: 55px !important;
     height: auto !important;
