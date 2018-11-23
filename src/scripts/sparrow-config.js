@@ -32,7 +32,7 @@ var groupResultsLabels = {
     b: "HUC8",
     c: "Tributary",
     d: "River Basin",
-    e: "State"
+    e: "State/Province"
 };
 
 //download locations
