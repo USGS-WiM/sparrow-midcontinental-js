@@ -36,8 +36,8 @@ var groupResultsLabels = {
 };
 
 //download locations
-var phosphorusShapefileURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_shapefiles_tp.zip";
-var nitrogenShapefileURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_shapefiles_tn.zip";
+var phosphorusShapefileURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_shapefiles_phosphorus.zip";
+var nitrogenShapefileURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_shapefiles_nitrogen.zip";
 var phosCalibrationURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_calibration_sites_tp.zip";
 var nitroCalibrationURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_calibration_sites_tn.zip";
 
