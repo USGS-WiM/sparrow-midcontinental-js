@@ -36,10 +36,10 @@ var groupResultsLabels = {
 };
 
 //download locations
-var phosphorusShapefileURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_shapefiles_phosphorus.zip";
-var nitrogenShapefileURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_shapefiles_nitrogen.zip";
-var phosCalibrationURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_calibration_sites_tp.zip";
-var nitroCalibrationURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_calibration_sites_tn.zip";
+var phosphorusShapefileURL = "https://sparrow.wim.usgs.gov/sparrow-midcontinental/downloads/midcont_shapefiles_phosphorus.zip";
+var nitrogenShapefileURL = "https://sparrow.wim.usgs.gov/sparrow-midcontinental/downloads/midcont_shapefiles_nitrogen.zip";
+var phosCalibrationURL = "https://sparrow.wim.usgs.gov/sparrow-midcontinental/downloads/midcont_calibration_sites_tp.zip";
+var nitroCalibrationURL = "https://sparrow.wim.usgs.gov/sparrow-midcontinental/downloads/midcont_calibration_sites_tn.zip";
 
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id" },
