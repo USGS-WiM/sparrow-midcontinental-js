@@ -118,7 +118,7 @@ require([
                     url: serviceBaseURL,
                     visibleLayers: [22],
                     options: {
-                        id: "gt 150",
+                        id: "gt4.2",
                         visible: false
                     },
                     wimOptions: {
@@ -134,7 +134,7 @@ require([
                     url: serviceBaseURL,
                     visibleLayers: [21],
                     options: {
-                        id: "gt 1000",
+                        id: "gt28",
                         visible: false
                     },
                     wimOptions: {
@@ -150,7 +150,7 @@ require([
                     url: serviceBaseURL,
                     visibleLayers: [23],
                     options: {
-                        id: "gt 5000",
+                        id: "gt142",
                         visible: false
                     },
                     wimOptions: {

@@ -9,7 +9,8 @@ ALSO uses SPARROWID and ST_SPARRID in place of COMID, ST_COMID
 var appTitle = "2002 Midcontinental Nutrient Loading";
 var appVersion = "v0.9.0";
 
-var serviceBaseURL = "https://sparrowtest.wim.usgs.gov/arcgis/rest/services/sparrowMidcontinental/SparrowMidcontinental/MapServer/"; //important! UPDATE rest service URL
+var serviceBaseURL =
+    "https://sparrowtest.wim.usgs.gov/arcgis/rest/services/sparrowMidcontinental/SparrowMidcontinental/MapServer/"; //important! UPDATE rest service URL
 var chartUnits = " (kg/yr.)";
 var chartFeatureMax = 2500; //chart will not be available if more than this many polygons are showing on map.
 
@@ -36,10 +37,10 @@ var groupResultsLabels = {
 };
 
 //download locations
-var phosphorusShapefileURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_shapefiles_phosphorus.zip";
-var nitrogenShapefileURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_shapefiles_nitrogen.zip";
-var phosCalibrationURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_calibration_sites_tp.zip";
-var nitroCalibrationURL = "https://test.wim.usgs.gov/sparrow-midcontinental-test/Downloads/midcont_calibration_sites_tn.zip";
+var phosphorusShapefileURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/midcont_shapefiles_phosphorus.zip";
+var nitrogenShapefileURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/midcont_shapefiles_nitrogen.zip";
+var phosCalibrationURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/midcont_calibration_sites_tp.zip";
+var nitroCalibrationURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/midcont_calibration_sites_tn.zip";
 
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id" },

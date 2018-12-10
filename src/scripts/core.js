@@ -2324,9 +2324,9 @@ require([
             htmlArr.push("<tr id='row" + rowI + "'>");
             $.each(feature, function(key, value) {
                 if (key == "total") {
-                    if ($("#groupResultsSelect")[0].selectedIndex == 0){
+                    if ($("#groupResultsSelect")[0].selectedIndex == 0) {
                         htmlArr.splice(-2, 0, "<td>" + value + "</td>");
-                    } else{
+                    } else {
                         htmlArr.splice(-1, 0, "<td>" + value + "</td>");
                     }
                 } else {
@@ -2555,7 +2555,7 @@ require([
                 var button = $(
                     '<div class="btn-group-vertical lyrTogDiv" style="cursor: pointer;" > <button id="' +
                         layer.id +
-                        '"type="button" class="btn btn-default active" aria-pressed="true" style="font-weight: bold;text-align: left"><i class="glyphspan fa fa-check-square-o"></i>&nbsp;&nbsp;' +
+                        '"type="button" class="btn btn-default active" aria-pressed="true" style="font-weight: bold;text-align: left"><i class="glyphspan fa fa-square-o"></i>&nbsp;&nbsp;' +
                         layerName +
                         '<span id="opacity' +
                         camelize(layerName) +
@@ -2582,7 +2582,7 @@ require([
             //click listener for regular
             button.click(function(e) {
                 //toggle checkmark
-                if (e.currentTarget.firstElementChild.id != "SparrowRanking"){
+                if (e.currentTarget.firstElementChild.id != "SparrowRanking") {
                     $(this)
                         .find("i.glyphspan")
                         .toggleClass("fa-check-square-o fa-square-o");
@@ -2621,7 +2621,6 @@ require([
                         //TODO: note that layers that are turned on won't show up in the legend on instantiation
                     }
                 }
-                
             });
 
             //group heading logic
