@@ -29,7 +29,7 @@ var initQueryParams = ["ST", "GP3", "GP2", "GP1"]; //used to query for the AOI d
 //used to set dynamic labels in chart
 var groupResultsLabels = {
     a: "Catchment ID",
-    b: "HUC8",
+    b: "HUC8/Sub-sub drainage area",
     c: "Tributary",
     d: "River Basin",
     e: "State/Province"
@@ -66,7 +66,7 @@ var aggregateDefinitions = {
     st: "State/Province",
     gp1: "Major Drainage Area",
     gp2: "Tributary",
-    gp3: "HUC8",
+    gp3: "HUC8/Sub-sub drainage ",
     sg1: "State_Drainage Area",
     sg2: "State_Tributary",
     sg3: "State_HUC8"

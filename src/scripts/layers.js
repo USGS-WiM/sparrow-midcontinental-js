@@ -114,7 +114,7 @@ require([
                         includeLegend: false
                     }
                 },
-                "Reaches > 150 m³ per second": {
+                "Reaches > 4.2 m³ per second": {
                     url: serviceBaseURL,
                     visibleLayers: [22],
                     options: {
@@ -130,7 +130,7 @@ require([
                         includeLegend: false
                     }
                 },
-                "Reaches > 1000 m³ per second": {
+                "Reaches > 28 m³ per second": {
                     url: serviceBaseURL,
                     visibleLayers: [21],
                     options: {
@@ -146,7 +146,7 @@ require([
                         includeLegend: false
                     }
                 },
-                "Reaches > 5000 m³ per second": {
+                "Reaches > 142 m³ per second": {
                     url: serviceBaseURL,
                     visibleLayers: [23],
                     options: {
