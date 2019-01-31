@@ -98,7 +98,7 @@ require([
             showGroupHeading: true,
             includeInLayerList: true,
             layers: {
-                "Midcontinental Reaches": {
+                "Midcontinent Reaches": {
                     url: serviceBaseURL,
                     visibleLayers: [20],
                     options: {
