@@ -37,10 +37,11 @@ var groupResultsLabels = {
 };
 
 //download locations
-var phosphorusShapefileURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/midcont_shapefiles_phosphorus.zip";
-var nitrogenShapefileURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/midcont_shapefiles_nitrogen.zip";
-var phosCalibrationURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/midcont_calibration_sites_tp.zip";
-var nitroCalibrationURL = "https://sparrow.wim.usgs.gov/mid-continental/downloads/midcont_calibration_sites_tn.zip";
+var rootURL = "https://sparrow.wim.usgs.gov/midcontinent-2002/downloads/"
+var phosphorusShapefileURL =  rootURL + "midcont_shapefiles_phosphorus.zip";
+var nitrogenShapefileURL =  rootURL + "midcont_shapefiles_nitrogen.zip";
+var phosCalibrationURL = rootURL + "midcont_calibration_sites_tp.zip";
+var nitroCalibrationURL = rootURL + "midcont_calibration_sites_tn.zip";
 
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id" },
@@ -108,9 +109,7 @@ var mappedDefinitions = {
     al: "Aggregated load (kg)",
     ay: "Aggregated yield (kg/km2)",
     dal: "Delivered aggregated load (kg)",
-    day: "Delivered aggregated yield (kg/km2)",
-    ap: "Percent of aggregated load",
-    dap: "Percent of delivered aggregated load"
+    day: "Delivered aggregated yield (kg/km2)"
 };
 
 /***UPDATE IMPORTANT! complete with source data Excel key***/
