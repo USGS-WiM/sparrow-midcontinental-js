@@ -601,7 +601,7 @@ table.hover-highlight tbody > tr.even:hover > td {
 #legendElement{
     max-width: 425px;
     height: auto !important;
-    overflow: auto;  /*Erik Edited from scroll to auto 3/17/17*/
+    /* overflow: auto; */  /*Erik Edited from scroll to auto 3/17/17, then removed when setting explanation to defult to open*/
     max-height: 400px;
     position: fixed !important;
     top: 80px !important;

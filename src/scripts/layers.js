@@ -17,7 +17,7 @@ require([
 ], function (Extent, WMSLayerInfo, FeatureLayer, ImageParameters, LayerDrawingOptions) {
     var sparrowOverlay;
     if ($("#radio1")[0].checked == true) {
-        sparrowOverlay = 0;
+        sparrowOverlay = 1;
     } else {
         sparrowOverlay = 1;
     }
