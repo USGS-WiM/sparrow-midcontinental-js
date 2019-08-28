@@ -6,7 +6,7 @@ THIS CONFIG REMOVES CATCHMENT AND AGGREGATE LABELS FROM THE CHARTOUTFIELS OBJECT
 ALSO uses SPARROWID and ST_SPARRID in place of COMID, ST_COMID
 */
 
-var appTitle = "2002 Midcontinent Nutrient Loading";
+var appTitle = "2002 SPARROW Model Results for the Midcontinental Region of North America: Total Phosphorus and Total Nitrogen";
 var appVersion = "v0.9.0";
 
 var serviceBaseURL =
