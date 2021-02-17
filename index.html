@@ -6,7 +6,7 @@
 
     <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- build:css styles/vendor.css -->
+<!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
@@ -51,11 +51,10 @@
     <!-- endbuild -->
     <script type="text/javascript" src="https://js.arcgis.com/3.21/"></script>
 
-    
     <!-- build:js scripts/combined.js -->
     <script type="text/javascript" src="scripts/utilities.js"></script>
-
     <script type="text/javascript" src="scripts/sparrow-config.js"></script>
+
     <script type="text/javascript" src="scripts/layers.js"></script>
     <script type="text/javascript" src="scripts/export-csv.js"></script>
     <script type="text/javascript" src="scripts/highcharts-exporting-module.js"></script>
@@ -370,6 +369,26 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- End About modal -->
+
+     <!--geosearch down Disclaimer -->
+     <div id="searchDownModal" aria-hidden="true" class="modal fade overflow-y-hidden" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 style="text-align: center">The USGS Search is currently down.</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Unfortunately, the Find Location tool is not available at the moment. Work to restore service is currently underway.</p>
+                </div>
+                <div class="modal-footer">
+                    <div style="text-align: center">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color: #ffd1d1">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End geosearch down Disclaimer-->
 
     <div id="userGuideModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-lg">
