@@ -10,7 +10,7 @@ var appTitle = "2002 SPARROW Model Results for the Midcontinental Region of Nort
 var appVersion = "v0.9.0";
 
 var serviceBaseURL =
-    "https://sparrowtest.wim.usgs.gov/arcgis/rest/services/sparrowMidcontinental/SparrowMidcontinental/MapServer/"; //important! UPDATE rest service URL
+    "https://gis1.wim.usgs.gov/server/rest/services/Sparrow/SparrowMidcontinental/MapServer/"; //important! UPDATE rest service URL
 var chartUnits = " (kg/yr.)";
 var chartFeatureMax = 2500; //chart will not be available if more than this many polygons are showing on map.
 
